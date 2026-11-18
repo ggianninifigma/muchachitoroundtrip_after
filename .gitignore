@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+
+# Keep source images at repo root out of the way (served copies live in public/images)

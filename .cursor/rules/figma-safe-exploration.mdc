@@ -1,0 +1,27 @@
+---
+description: Safety guardrails for exploring changes (Code Layers, experiments) in the GG Roundtrip Figma file without breaking the Design System, Code Connect, or the React app.
+alwaysApply: true
+---
+
+# Figma Safe Exploration
+
+When asked to create a Code Layer, prototype, or "explore changing things around" in the Figma file GG-Roundtrip_E-commerce (fileKey `oO5TfFAXgsNDcNQUL9B53D`), follow these guardrails. Goal: let the user experiment freely while keeping the shipped Design System, Code Connect, and the app intact. Also follow the `figma-design-system` skill for styling.
+
+## Isolate experiments
+- Do exploration on a **scratch page, a new frame, or duplicated/detached copies** — never edit the published **main components** (Button set `8:2`, Product Card `10:3`, Badge, Input, Header, Footer, Toast) or their variants directly.
+- To try a component change, duplicate the instance/frame and change the copy. Only touch a main component when the user explicitly says to update the component itself.
+
+## Treat tokens as read-only by default
+- Do **not** silently rewrite variables, text styles, or effect styles. If an experiment needs a new token value, propose it and wait for an OK before changing the master token.
+
+## Protect Code Connect
+- Do not change the Code Connect mappings on nodes `8:2` / `10:3`, and do not edit `src/components/*.figma.ts` or `figma.config.json` unless explicitly asked. Never republish Code Connect without being asked.
+
+## Don't touch the app as a side effect
+- Figma/Code Layer exploration stays in Figma. Do not edit files under `src/**` (the running React site) unless the user is explicitly porting a change back to code.
+
+## Confirm destructive actions
+- Ask before deleting, detaching, flattening, or mass-restyling existing layers/components. Additive, reversible changes first.
+
+## Before finishing
+- State what was created/changed, confirm no main component or token was altered unintentionally, and note anything the user must publish or port manually.

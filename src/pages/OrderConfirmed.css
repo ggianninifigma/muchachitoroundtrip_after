@@ -1,0 +1,38 @@
+.confirmed {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-8);
+}
+
+.confirmed__mark {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-pill);
+  background: var(--color-success);
+  color: #fff;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+}
+
+.confirmed__title {
+  font-size: var(--text-2xl);
+  text-transform: uppercase;
+}
+
+.confirmed__lede {
+  font-size: var(--text-lg);
+  color: var(--color-ink-soft);
+  margin: 0;
+  max-width: 48ch;
+}
+
+.confirmed__order {
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 var(--space-4);
+}

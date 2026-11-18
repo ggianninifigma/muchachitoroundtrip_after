@@ -1,0 +1,67 @@
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.ds-button:active {
+  transform: translateY(1px);
+}
+
+.ds-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* Sizes */
+.ds-button--md {
+  font-size: var(--text-sm);
+  padding: var(--space-3) var(--space-5);
+}
+
+.ds-button--lg {
+  font-size: var(--text-md);
+  padding: var(--space-4) var(--space-6);
+}
+
+.ds-button--block {
+  width: 100%;
+}
+
+/* Variants */
+.ds-button--primary {
+  background: var(--color-brand-red);
+  color: #fff;
+}
+.ds-button--primary:hover:not(:disabled) {
+  background: var(--color-brand-red-dark);
+}
+
+.ds-button--secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+.ds-button--secondary:hover:not(:disabled) {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.ds-button--ghost {
+  background: transparent;
+  color: var(--color-ink);
+}
+.ds-button--ghost:hover:not(:disabled) {
+  color: var(--color-brand-red);
+}
