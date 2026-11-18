@@ -6,6 +6,9 @@ import react from "@vitejs/plugin-react";
 const isFigma = Boolean(process.env.FIGMA);
 
 export default defineConfig({
+  // Served at the domain root locally and in Figma; under a repo sub-path on
+  // GitHub Pages (set GH_PAGES=1 for that build).
+  base: process.env.GH_PAGES ? "/muchachitoroundtrip_after/" : "/",
   plugins: [react()],
   server: {
     port: isFigma ? Number(process.env.PORT) : 5173,
